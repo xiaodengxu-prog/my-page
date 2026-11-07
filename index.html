@@ -5,20 +5,50 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Xiaodeng Xu</title>
 <style>
-  body { font-family: Georgia, "Times New Roman", serif; background: #f5f1e6; color: #222; margin: 0; }
-  main { max-width: 42rem; margin: 0 auto; padding: 4rem 1.25rem; line-height: 1.65; }
-  h1 { font-size: 2.2rem; margin-bottom: .2rem; }
-  .sub { color: #666; margin-top: 0; }
-  h2 { margin-top: 2.5rem; font-size: 1.3rem; border-bottom: 1px solid #c9c2ad; padding-bottom: .3rem; }
-  a { color: #1d3f7a; }
-  .btn { display: inline-block; margin-top: .5rem; padding: .5rem 1rem; border: 1px solid #1d3f7a; border-radius: 6px; text-decoration: none; }
-  footer { margin-top: 3rem; color: #888; font-size: .9rem; }
+  :root { --maroon:#6b1414; --deep:#3d0b0b; --gold:#d4a017; --gold2:#f0c75e; --saffron:#e8871e; --indigo:#1c2d5a; --cream:#f7ecd2; --turq:#2a8c8c; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: Georgia, "Times New Roman", serif; color: var(--cream); line-height:1.7;
+    background: radial-gradient(ellipse at top, #7a1818 0%, var(--deep) 70%) fixed; }
+  .frame { max-width: 46rem; margin: 2rem auto; padding: 0 1rem; }
+  .panel { position: relative; background: rgba(28,10,10,.55); border: 2px solid var(--gold); border-radius: 4px;
+    padding: 3rem 2rem 2.5rem; box-shadow: 0 0 0 6px var(--deep), 0 0 0 8px var(--gold), 0 10px 40px rgba(0,0,0,.5); }
+  .panel::before, .panel::after { content:"✦"; position:absolute; top:10px; color: var(--gold); font-size:1.1rem; }
+  .panel::before { left:14px } .panel::after { right:14px }
+  .mandala { display:block; margin: 0 auto 1rem; width: 120px; height: 120px; }
+  h1 { text-align:center; font-size:2.4rem; margin:.2rem 0 0; color: var(--gold2); letter-spacing:.05em; font-weight:normal; }
+  .sub { text-align:center; margin:.3rem 0 0; color: var(--saffron); letter-spacing:.12em; font-size:.85rem; text-transform:uppercase; }
+  .border { height: 14px; margin: 1.6rem 0 .5rem;
+    background: repeating-linear-gradient(90deg, var(--gold) 0 12px, transparent 12px 20px, var(--turq) 20px 32px, transparent 32px 40px, var(--saffron) 40px 52px, transparent 52px 60px);
+    -webkit-mask: linear-gradient(#000 0 3px, transparent 3px 11px, #000 11px); mask: linear-gradient(#000 0 3px, transparent 3px 11px, #000 11px); }
+  h2 { color: var(--gold2); font-weight:normal; font-size:1.3rem; margin:2rem 0 .5rem; }
+  h2::before { content:"❖ "; color: var(--saffron); }
+  a { color: var(--gold2); }
+  .btn { display:inline-block; margin-top:.8rem; padding:.6rem 1.2rem; color: var(--deep); background: linear-gradient(var(--gold2), var(--gold));
+    border-radius: 999px; text-decoration:none; font-weight:bold; border:1px solid #fff3; }
+  .btn:hover { filter: brightness(1.1); }
+  footer { text-align:center; margin-top:2.5rem; color:#d9b98a; font-size:.85rem; }
+  @media (max-width:500px){ .panel{ padding:2.5rem 1.2rem 2rem } h1{font-size:1.9rem} }
 </style>
 </head>
 <body>
-<main>
+<div class="frame"><div class="panel">
+  <svg class="mandala" viewBox="-60 -60 120 120" aria-hidden="true">
+    <g fill="none" stroke="#f0c75e" stroke-width="1.2">
+      <circle r="56"/><circle r="50" stroke="#e8871e"/><circle r="26" stroke="#2a8c8c"/>
+      <rect x="-20" y="-20" width="40" height="40" transform="rotate(45)"/>
+      <rect x="-20" y="-20" width="40" height="40"/>
+    </g>
+    <g fill="#e8871e" stroke="#f0c75e" stroke-width=".8">
+      <g id="p"><path d="M0-50 C8-40 8-32 0-26 C-8-32 -8-40 0-50Z"/></g>
+      <use href="#p" transform="rotate(45)"/><use href="#p" transform="rotate(90)"/><use href="#p" transform="rotate(135)"/>
+      <use href="#p" transform="rotate(180)"/><use href="#p" transform="rotate(225)"/><use href="#p" transform="rotate(270)"/><use href="#p" transform="rotate(315)"/>
+    </g>
+    <circle r="8" fill="#f0c75e"/><circle r="3.5" fill="#6b1414"/>
+  </svg>
+
   <h1>Xiaodeng Xu</h1>
   <p class="sub">Buddhist cave temples · archaeology · writing for the public</p>
+  <div class="border"></div>
 
   <h2>About</h2>
   <p>I am interested in Chinese Buddhist grottoes and in finding ways to share their history and art with a wider audience. This page is a small portfolio sample.</p>
@@ -28,7 +58,8 @@
   <p>As one of the primary writers and editors, I contributed roughly one-third of the text (around 200 pages), focusing on sites such as Kizil, Piyang, Anyue, and Maijishan. My work included synthesizing excavation data, verifying iconographic details, and adapting archaeological records into accessible Chinese narratives for the public.</p>
   <a class="btn" href="complete-works-of-chinese-grottoes.pdf">Read the preface and author's note (PDF)</a>
 
+  <div class="border"></div>
   <footer>Built with Git, GitHub Pages and Claude Code.</footer>
-</main>
+</div></div>
 </body>
 </html>
